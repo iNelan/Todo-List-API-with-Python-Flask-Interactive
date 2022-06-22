@@ -28,10 +28,12 @@ def add_new_todo():
     return jsonify(todos)
 
 
-@app.route('/todos/<int:position>', methods=['DELETE'])
+@app.route('/todos/1', methods=['DELETE'])
 def delete_todo(position):
+    request_body = json.loads(request.data)
+    todos.remove(1)
     print("This is the position to delete: ",position)
-    return 'something'
+    return jsonify(todos)
 
 
 
